@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	service "woc/database/service"
+	service "woc/service"
 
 	"golang.org/x/crypto/bcrypt"
 )

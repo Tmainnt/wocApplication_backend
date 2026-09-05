@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	auth "woc/database/auth"
+	auth "woc/auth"
 )
 
 type Post struct {
@@ -60,7 +60,10 @@ func GetMyPost(db *sql.DB) http.HandlerFunc {
 		claims := r.Context().Value(auth.UserContextKey).(*auth.Claims)
 
 		row, err := db.Query(`SELECT post_id, user_id_fk, content, image_url, like_count, comment_count, report_count, create_timestamp, update_timestamp FROM post WHERE user_id_pk = $1`, claims.UserID)
-
+		if row.Err() != nil {
+			http.Error(w, "Database error", 500)
+			return
+		}
 		if err != nil {
 			http.Error(w, "Error fetch data", 500)
 			return

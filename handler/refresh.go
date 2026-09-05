@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	auth "woc/database/auth"
+	auth "woc/auth"
 )
 
 type RefreshRequest struct {

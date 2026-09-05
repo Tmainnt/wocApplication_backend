@@ -8,8 +8,8 @@ import (
 	"log"
 	"net/http"
 	"time"
-	auth "woc/database/auth"
-	service "woc/database/service"
+	auth "woc/auth"
+	service "woc/service"
 
 	"golang.org/x/crypto/bcrypt"
 )

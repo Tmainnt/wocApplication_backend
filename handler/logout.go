@@ -3,7 +3,7 @@ package handler
 import (
 	"database/sql"
 	"net/http"
-	auth "woc/database/auth"
+	auth "woc/auth"
 )
 
 func LogoutHandler(db *sql.DB) http.HandlerFunc {

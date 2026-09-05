@@ -8,9 +8,9 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-	auth "woc/database/auth"
-	handler "woc/database/handler"
-	pdb "woc/database/postDB"
+	auth "woc/auth"
+	handler "woc/handler"
+	pdb "woc/postDB"
 
 	"net/http"
 
